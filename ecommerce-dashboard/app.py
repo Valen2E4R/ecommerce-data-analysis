@@ -23,6 +23,7 @@ df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
 df['Revenue'] = df['Quantity'] * df['UnitPrice']
 
 # Filtro por país
+st.sidebar.header("Filtros")
 country = st.selectbox("Seleccionar país", df['Country'].unique())
 
 # Filtro por fecha
@@ -78,6 +79,8 @@ st.bar_chart(top_products)
 
 #top clientes
 
+st.divider()
+
 st.subheader("👥 Top Clientes")
 
 top_customers = (
@@ -90,6 +93,9 @@ top_customers = (
 st.bar_chart(top_customers)
 
 # Ventas en el tiempo
+
+st.divider()
+
 st.subheader("Ventas en el tiempo")
 
 sales_time = (
@@ -102,3 +108,11 @@ sales_time = (
 sales_time = sales_time.fillna(0)
 
 st.line_chart(sales_time)
+
+st.subheader("🧠 Insights")
+
+st.markdown("""
+- Un pequeño grupo de clientes genera gran parte del revenue
+- Algunos productos dominan las ventas
+- Existen variaciones en el comportamiento de compra según el tiempo
+""")
