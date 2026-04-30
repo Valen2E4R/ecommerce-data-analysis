@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 
 # Configuración
 st.set_page_config(page_title="E-commerce Dashboard", layout="wide")
@@ -8,7 +9,10 @@ st.title("📊 E-commerce Analytics Dashboard")
 st.markdown("Análisis interactivo de ventas, clientes y comportamiento de compra")
 
 # Cargar datos
-df = pd.read_csv("data/ecommerce_sample.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "..", "data", "ecommerce_sample.csv")
+
+df = pd.read_csv(DATA_PATH)
 
 # Convertir InvoiceDate a datetime
 df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
