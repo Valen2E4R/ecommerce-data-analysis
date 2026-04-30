@@ -8,7 +8,7 @@ st.title("📊 E-commerce Analytics Dashboard")
 st.markdown("Análisis interactivo de ventas, clientes y comportamiento de compra")
 
 # Cargar datos
-df = pd.read_csv("../data/ecommerce_sample.csv")
+df = pd.read_csv("data/ecommerce_sample.csv")
 
 # Convertir InvoiceDate a datetime
 df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
