@@ -3,9 +3,11 @@ import pandas as pd
 import os
 
 # Configuración
-st.set_page_config(page_title="E-commerce Dashboard", layout="wide")
-
-st.title("📊 E-commerce Analytics Dashboard")
+st.set_page_config(
+    page_title="E-commerce Analytics",
+    layout="wide",
+    page_icon="📊"
+)
 st.markdown("Análisis interactivo de ventas, clientes y comportamiento de compra")
 
 # Cargar datos
